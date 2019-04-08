@@ -31,6 +31,12 @@ $(document).ready(function () {
             Frequency: frequency,
             FirstTrain: firstTrain
         });
+
+        $("#train-input").clear();
+        $("#destination-input").clear();
+        $("#first-train-time-input").clear();
+        $("#frequency-input").clear();
+
     });
     function updateTime() {
         var currentTime = moment().format('HH:mm:ss');
