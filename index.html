@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.css">
+    <link href="style.css">
+    </link>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -25,20 +27,23 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4 text-center">Anytime is Train Time!</h1>
-            <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra
-                attention to
-                featured content or information.</p>
+        <div class="jumbotron bg-dark my-2">
+            <h1 class="display-4 text-center text-white">TRAIN SCHEDULER</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div id="currentTime" class="col-lg-2 text-center border border-dark"></div>
+            <div class="col-lg-5"></div>
         </div>
 
         <div class="row my-3">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-header bg-dark text-white">Current Train Schedule</div>
                     <div class="card-body">
                         <div id="current-train-schedule">
-                            <table class="table">
+                            <table class="table text-center">
                                 <thead>
                                     <tr>
                                         <th>Train Name</th>
@@ -62,9 +67,9 @@
         <div class="row my-4">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">Add Train</div>
+                    <div class="card-header bg-dark text-white">Add Train</div>
                     <div class="card-body">
-                        <form role="form">
+                        <form role="form" class="px-4">
                             <div class="form-group row">
                                 <label for="train-input">Train Name</label>
                                 <input class="form-control" id="train-input" type="text">
@@ -77,9 +82,11 @@
 
                             <div class="form-group row">
                                 <label for="first-train-time-input" class="col-lg-12">First Train Time (HH:mm - military time)</label>
-                                <input id="first-train-time-input" type="text" class="time ui-timepicker-input col-lg-5 form-control" autocomplete="off" data-com.agilebits.onepassword.user-edited="yes">
+                                <input id="first-train-time-input" type="text"
+                                    class="time ui-timepicker-input col-lg-5 form-control" autocomplete="off"
+                                    data-com.agilebits.onepassword.user-edited="yes">
                                 <div class="col-lg-1"></div>
-                               <!-- <button id="setTimeButton" class="col-lg-3">Set current time</button>-->
+                                <!-- <button id="setTimeButton" class="col-lg-3">Set current time</button>-->
                                 <div class="col-lg-3"></div>
                             </div>
 
