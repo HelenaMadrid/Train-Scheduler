@@ -32,10 +32,10 @@ $(document).ready(function () {
             FirstTrain: firstTrain
         });
 
-        $("#train-input").clear();
-        $("#destination-input").clear();
-        $("#first-train-time-input").clear();
-        $("#frequency-input").clear();
+        $("#train-input").text("");
+        $("#destination-input").text("");
+        $("#first-train-time-input").text("");
+        $("#frequency-input").text("");
 
     });
     function updateTime() {
