@@ -34,10 +34,7 @@ $(document).ready(function () {
     });
     function updateTime() {
         var currentTime = moment().format('HH:mm:ss');
-        var timeP=$("<p>");
-
-        $("#currentTime").append(timeP);
-        timeP.html("<strong>Current Time: </strong><br>"+currentTime);
+        $("#currentTime").html("<p><strong>Current Time: </strong></p><br>"+currentTime);
         setInterval(updateTime, 1000);
     }
     updateTime();
