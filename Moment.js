@@ -32,10 +32,10 @@ $(document).ready(function () {
             FirstTrain: firstTrain
         });
 
-        $("#train-input").text("");
-        $("#destination-input").text("");
-        $("#first-train-time-input").text("");
-        $("#frequency-input").text("");
+        $("#train-input").text(" ");
+        $("#destination-input").text(" ");
+        $("#first-train-time-input").text(" ");
+        $("#frequency-input").text(" ");
 
     });
     function updateTime() {
@@ -52,16 +52,7 @@ $(document).ready(function () {
         var tdFrequency = $("<td>");
         var tdNextArrival = $("<td>");
         var tdMinutesAway = $("<td>");
-        var nowTime = moment();
-
-
-        var frequencyMin = childSnapshot.val().Frequency;
-        var firstTrainTime = moment(childSnapshot.val().FirstTrain, "HH:mm").subtract(1, "years");
-        var timeDifference = nowTime.diff(moment(firstTrainTime), "minutes");
-        var tRemainder = timeDifference % frequencyMin;
-        var minutesAway = frequencyMin - tRemainder;
-        var nextTrain = moment().add(minutesAway, "minutes");
-
+        
         tdTrain.attr("class", "train-name");
         tdDestination.attr("class", "destination");
         tdFrequency.attr("class", "frequency");
@@ -78,7 +69,21 @@ $(document).ready(function () {
         tdTrain.text(childSnapshot.val().TrainName);
         tdDestination.text(childSnapshot.val().Destination);
         tdFrequency.text(childSnapshot.val().Frequency);
+
+        function updateMinutes(){
+        var nowTime = moment();
+        var frequencyMin = childSnapshot.val().Frequency;
+        var firstTrainTime = moment(childSnapshot.val().FirstTrain, "HH:mm").subtract(1, "years");
+        var timeDifference = nowTime.diff(moment(firstTrainTime), "minutes");
+        var tRemainder = timeDifference % frequencyMin;
+        var minutesAway = frequencyMin - tRemainder;
+        var nextTrain = moment().add(minutesAway, "minutes");
+
         tdNextArrival.text(moment(nextTrain).format("HH:mm"));
         tdMinutesAway.text(minutesAway);
+    }
+    setInterval(updateMinutes, 1000)
+
+        
     })
 })
