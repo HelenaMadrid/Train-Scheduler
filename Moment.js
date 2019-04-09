@@ -70,7 +70,7 @@ $(document).ready(function () {
         tdDestination.text(childSnapshot.val().Destination);
         tdFrequency.text(childSnapshot.val().Frequency);
 
-        function updateMinutes(){
+     
         var nowTime = moment();
         var frequencyMin = childSnapshot.val().Frequency;
         var firstTrainTime = moment(childSnapshot.val().FirstTrain, "HH:mm").subtract(1, "years");
@@ -81,8 +81,7 @@ $(document).ready(function () {
 
         tdNextArrival.text(moment(nextTrain).format("HH:mm"));
         tdMinutesAway.text(minutesAway);
-    }
-    setInterval(updateMinutes, 1000)
+ 
 
         
     })
